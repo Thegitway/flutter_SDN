@@ -15,7 +15,6 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   double _size = 0.25;
   Orientation ori;
   Orientation oldOri;
-  Color co = Colors.limeAccent;
 
   void _updateSize() {
     setState(() {
