@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/welcome_screen.dart';
-import 'package:le_savoir_du_nord/constants.dart';
+import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
+import 'package:le_savoir_du_nord/Screens/note/components/Bodyn.dart';
 
 class Master extends StatelessWidget {
   Master({Key key, this.body}) : super(key: key);
@@ -21,95 +22,52 @@ class Master extends StatelessWidget {
         ),
         toolbarHeight: heightBar * 1.2,
       ),
-      drawer: Drawer(
-        child: ListView(
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.amber,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
           children: [
-            Stack(
-              overflow: Overflow.clip,
-              children: [
-                Image.asset(
-                  "assets/images/Drawer_back.jpg",
-                ),
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      width: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.1
-                          : MediaQuery.of(context).size.width * 0.1,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.1
-                          : MediaQuery.of(context).size.width * 0.1,
-                    ),
+            IconButton(
+              icon: Icon(Icons.arrow_back_ios),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WelcomeScreen();
+                    },
                   ),
-                ),
-                Center(
-                  child: Text(
-                    "Name",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  heightFactor: 9,
-                ),
-              ],
+                );
+              },
             ),
-            ListTile(
-              title: Padding(
-                padding: const EdgeInsets.fromLTRB(15, 8, 0, 0),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      WidgetSpan(
-                        child: Icon(Icons.mark_chat_read_outlined, size: 20),
-                      ),
-                      TextSpan(
-                        text: "   Note",
-                        style: TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ],
+            IconButton(
+              icon: Icon(Icons.school),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WelcomeScreen();
+                    },
                   ),
-                ),
-              ),
-              autofocus: true,
+                );
+              },
             ),
-            ListTile(
-              title: Padding(
-                padding: const EdgeInsets.fromLTRB(15, 8, 0, 0),
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      WidgetSpan(
-                        child: Icon(Icons.class_, size: 20),
-                      ),
-                      TextSpan(
-                        text: "   Class",
-                        style: TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              title: FlatButton(
-                color: kPrimaryColor,
-                onPressed: () {
+            IconButton(
+              icon: Icon(Icons.person),
+              onPressed: () {
+                if (!(this.body is Bodyn)) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return WelcomeScreen();
+                        return NoteScreen();
                       },
                     ),
                   );
-                },
-                child: Text(
-                  "Logout",
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
-              ),
+                } //if
+              },
             ),
           ],
         ),
