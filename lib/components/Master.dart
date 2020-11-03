@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/welcome_screen.dart';
 import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
 import 'package:le_savoir_du_nord/Screens/note/components/Bodyn.dart';
+import 'package:le_savoir_du_nord/Screens/class/class_screen.dart';
+import 'package:le_savoir_du_nord/Screens/class/components/Bodyc.dart';
 
 class Master extends StatelessWidget {
   Master({Key key, this.body}) : super(key: key);
@@ -44,14 +46,16 @@ class Master extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.school),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WelcomeScreen();
-                    },
-                  ),
-                );
+                if (!(this.body is Bodyc)) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ClassScreen();
+                      },
+                    ),
+                  );
+                } //if
               },
             ),
             IconButton(
