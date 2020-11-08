@@ -1,0 +1,4 @@
+#Sun Nov 08 21:03:51 WEST 2020
+base.0=C\:\\Users\\omaro\\Desktop\\ex_Flutter\\le_savoir_du_nord\\flutter_SDN-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
