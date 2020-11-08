@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class Array extends StatelessWidget {
   double width;
-  var col = <List<String>>[];
+  var col = <List<Widget>>[];
 
   Array({
     Key key,
@@ -35,10 +35,7 @@ class Array extends StatelessWidget {
               color: i == 0 ? Colors.grey[400] : Colors.amber,
               borderRadius: BorderRadius.all(Radius.circular(20.0))),
           child: Center(
-            child: Text(
-              col[index][i],
-              style: TextStyle(fontSize: 20),
-            ),
+            child: col[index][i],
           ),
         ),
       ));

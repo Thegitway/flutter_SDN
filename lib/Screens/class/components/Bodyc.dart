@@ -10,11 +10,11 @@ class Bodyc extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Array(width: size.width, col: [
-      ["Math", "10/20", "15/20"],
+      /*["Math", "10/20", "15/20"],
       ["Omar", "ok", "fff"],
       ["Omar", "ok", "fff"],
       ["Omar", "ok", "fff"],
-      ["Omar", "ok", "fff"],
+      ["Omar", "ok", "fff"],*/
     ]);
   }
 }
