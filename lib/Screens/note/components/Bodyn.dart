@@ -15,101 +15,112 @@ class Bodyn extends StatefulWidget {
 }
 
 class _BodynState extends State<Bodyn> {
-  double fontSizes = 23;
-  double olds;
-  Absence classBody;
+  double fontSizes;
+  Absence AbsenceBody;
   @override
   void initState() {
     super.initState();
-    olds = fontSizes;
-    ClassApi().then((value) {
+    /* ClassApi().then((value) {
       setState(() {
-        classBody = value;
+        AbsenceBody = value;
       });
-    });
+    });*/
   }
 
   @override
   Widget build(BuildContext context) {
-    //api
+    fontSizes = MediaQuery.of(context).devicePixelRatio * 8;
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Array(width: size.width, col: [
-        [
-          Text("Class ID", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.class_id is String
-                  ? classBody.class_id
-                  : classBody.class_id.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("Student ID", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.stu_id is String
-                  ? classBody.stu_id
-                  : classBody.stu_id.toString(),
-              style: TextStyle(fontSize: fontSizes))
-        ],
-        [
-          Text("Class name", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.cl_name is String
-                  ? classBody.cl_name
-                  : classBody.cl_name.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("Class link", style: TextStyle(fontSize: fontSizes)),
-          ListTile(
-            title: Icon(Icons.live_tv),
-            onTap: () async {
-              launch("https://flutter.dev");
-            },
-          ),
-        ],
-        [
-          Text("Student last name", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.Stu_last_name is String
-                  ? classBody.Stu_last_name
-                  : classBody.Stu_last_name.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("term", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.c_term is String
-                  ? classBody.c_term
-                  : classBody.c_term.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("Langage", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.lan is String
-                  ? classBody.lan
-                  : classBody.lan.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("Level", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.lvl is String
-                  ? classBody.lvl
-                  : classBody.lvl.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-        [
-          Text("Attendance", style: TextStyle(fontSize: fontSizes)),
-          Text(
-              classBody.attendances is String
-                  ? classBody.attendances
-                  : classBody.attendances.toString(),
-              style: TextStyle(fontSize: fontSizes)),
-        ],
-      ]),
-      backgroundColor: kPrimaryColor,
-    );
+
+    return FutureBuilder(
+        future: ClassApi(),
+        builder: (context, snapshot) {
+          AbsenceBody = snapshot.data;
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Array(width: size.width, col: [
+              [
+                Text("Class ID", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.class_id is String
+                        ? AbsenceBody.class_id
+                        : AbsenceBody.class_id.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Student ID", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.stu_id is String
+                        ? AbsenceBody.stu_id
+                        : AbsenceBody.stu_id.toString(),
+                    style: TextStyle(fontSize: fontSizes))
+              ],
+              [
+                Text("Class name", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.cl_name is String
+                        ? AbsenceBody.cl_name
+                        : AbsenceBody.cl_name.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Class link", style: TextStyle(fontSize: fontSizes)),
+                ListTile(
+                  title: Icon(
+                    Icons.live_tv,
+                    size: fontSizes,
+                  ),
+                  onTap: () async {
+                    if (AbsenceBody.url != null) {
+                      if (await canLaunch(AbsenceBody.url))
+                        launch(AbsenceBody.url);
+                    }
+                  },
+                ),
+              ],
+              [
+                Text("Student last name",
+                    style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.Stu_last_name is String
+                        ? AbsenceBody.Stu_last_name
+                        : AbsenceBody.Stu_last_name.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("term", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.c_term is String
+                        ? AbsenceBody.c_term
+                        : AbsenceBody.c_term.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Langage", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.lan is String
+                        ? AbsenceBody.lan
+                        : AbsenceBody.lan.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Level", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.lvl is String
+                        ? AbsenceBody.lvl
+                        : AbsenceBody.lvl.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Attendance", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    AbsenceBody.attendances is String
+                        ? AbsenceBody.attendances
+                        : AbsenceBody.attendances.toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+            ]);
+          } else
+            return Center(child: CircularProgressIndicator());
+        });
   }
 }

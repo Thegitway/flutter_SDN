@@ -4,6 +4,8 @@ import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
 import 'package:le_savoir_du_nord/components/rounded_button.dart';
 import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
 
+import '../../../constants.dart';
+
 class Body extends StatefulWidget {
   Body({Key key}) : super(key: key);
 
@@ -52,11 +54,19 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             SizedBox(height: size.height * 0.07),
             RoundedInputField(
               hintText: "Student ID",
-              onChanged: (value) {},
+              onChanged: (value) {
+                setState(() {
+                  registerID = value;
+                });
+              },
             ),
             RoundedInputField(
               hintText: "Register ID",
-              onChanged: (co) {},
+              onChanged: (co) {
+                setState(() {
+                  studentID = co;
+                });
+              },
               icon: Icons.assistant_photo,
             ),
             RoundedButton(
