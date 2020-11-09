@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/welcome_screen.dart';
+import 'package:le_savoir_du_nord/Screens/absence/absence.screen.dart';
 import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
 import 'package:le_savoir_du_nord/Screens/note/components/Bodyn.dart';
 import 'package:le_savoir_du_nord/Screens/class/class_screen.dart';
@@ -30,7 +31,8 @@ class Master extends StatelessWidget {
                 Icons.person,
                 color: kPrimaryLightColor,
               ),
-              onPressed: () {})
+              onPressed: () {}),
+          // Text(studentID),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -40,13 +42,13 @@ class Master extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             IconButton(
-              icon: Icon(Icons.arrow_back_ios),
+              icon: Icon(Icons.hourglass_full),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return WelcomeScreen();
+                      return AbsenceScreen();
                     },
                   ),
                 );
@@ -68,7 +70,7 @@ class Master extends StatelessWidget {
               },
             ),
             IconButton(
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.note),
               onPressed: () {
                 if (!(this.body is Bodyn)) {
                   Navigator.push(

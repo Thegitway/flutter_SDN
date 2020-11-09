@@ -27,10 +27,10 @@ class Array extends StatelessWidget {
     var widgets = <Widget>[];
     for (int i = 0; i < col[index].length; i++) {
       widgets.add(Padding(
-        padding: EdgeInsets.all(4),
+        padding: EdgeInsets.all(2),
         child: Container(
           width: (width / col[index].length) - 4 * col[index].length,
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(17),
           decoration: BoxDecoration(
               color: i == 0 ? Colors.grey[400] : Colors.amber,
               borderRadius: BorderRadius.all(Radius.circular(20.0))),

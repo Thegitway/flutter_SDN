@@ -56,7 +56,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               hintText: "Student ID",
               onChanged: (value) {
                 setState(() {
-                  registerID = value;
+                  studentID = value;
                 });
               },
             ),
@@ -64,7 +64,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               hintText: "Register ID",
               onChanged: (co) {
                 setState(() {
-                  studentID = co;
+                  registerID = co;
                 });
               },
               icon: Icons.assistant_photo,

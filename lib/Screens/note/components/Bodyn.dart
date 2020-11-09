@@ -1,9 +1,8 @@
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/components/Array.dart';
-import 'package:le_savoir_du_nord/components/Absence.dart';
+import 'package:le_savoir_du_nord/components/Note.dart';
 import 'package:le_savoir_du_nord/components/Json/JsonM.dart';
-import 'package:le_savoir_du_nord/constants.dart';
 
 class Bodyn extends StatefulWidget {
   const Bodyn({
@@ -16,7 +15,7 @@ class Bodyn extends StatefulWidget {
 
 class _BodynState extends State<Bodyn> {
   double fontSizes;
-  Absence AbsenceBody;
+  Note noteBody;
   @override
   void initState() {
     super.initState();
@@ -33,89 +32,156 @@ class _BodynState extends State<Bodyn> {
     Size size = MediaQuery.of(context).size;
 
     return FutureBuilder(
-        future: ClassApi(),
+        future: getApiNote(urlNote, noteBody),
         builder: (context, snapshot) {
-          AbsenceBody = snapshot.data;
+          noteBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {
             return Array(width: size.width, col: [
               [
-                Text("Class ID", style: TextStyle(fontSize: fontSizes)),
+                Text("Student last name",
+                    style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.class_id is String
-                        ? AbsenceBody.class_id
-                        : AbsenceBody.class_id.toString(),
+                    noteBody.values[10] is String
+                        ? noteBody.values[10]
+                        : noteBody.values[10].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
-                Text("Student ID", style: TextStyle(fontSize: fontSizes)),
+                Text("Student first name",
+                    style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.stu_id is String
-                        ? AbsenceBody.stu_id
-                        : AbsenceBody.stu_id.toString(),
+                    noteBody.values[0] is String
+                        ? noteBody.values[0]
+                        : noteBody.values[0].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Test 1", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[1] is String
+                        ? noteBody.values[1]
+                        : noteBody.values[1].toString(),
                     style: TextStyle(fontSize: fontSizes))
+              ],
+              [
+                Text("Test 2", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[2] is String
+                        ? noteBody.values[2]
+                        : noteBody.values[2].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Participation", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[3] is String
+                        ? noteBody.values[3]
+                        : noteBody.values[3].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Final exam", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[4] is String
+                        ? noteBody.values[4]
+                        : noteBody.values[4].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Total", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[5] is String
+                        ? noteBody.values[5]
+                        : noteBody.values[5].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("decision", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[6] is String
+                        ? noteBody.values[6]
+                        : noteBody.values[6].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Teacher remarks", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[7] is String
+                        ? noteBody.values[7]
+                        : noteBody.values[7].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Class name", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.cl_name is String
-                        ? AbsenceBody.cl_name
-                        : AbsenceBody.cl_name.toString(),
+                    noteBody.values[8] is String
+                        ? noteBody.values[8]
+                        : noteBody.values[8].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Class link", style: TextStyle(fontSize: fontSizes)),
                 ListTile(
                   title: Icon(
-                    Icons.live_tv,
-                    size: fontSizes,
+                    Icons.link,
+                    size: fontSizes * 2.5,
                   ),
                   onTap: () async {
-                    if (AbsenceBody.url != null) {
-                      if (await canLaunch(AbsenceBody.url))
-                        launch(AbsenceBody.url);
+                    if (noteBody.values[9] != null) {
+                      if (await canLaunch(noteBody.values[9]))
+                        launch(noteBody.values[9]);
                     }
                   },
                 ),
               ],
               [
-                Text("Student last name",
+                Text("Teacher last name",
                     style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.Stu_last_name is String
-                        ? AbsenceBody.Stu_last_name
-                        : AbsenceBody.Stu_last_name.toString(),
+                    noteBody.values[11] is String
+                        ? noteBody.values[11]
+                        : noteBody.values[11].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
-                Text("term", style: TextStyle(fontSize: fontSizes)),
+                Text("Teacher first name",
+                    style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.c_term is String
-                        ? AbsenceBody.c_term
-                        : AbsenceBody.c_term.toString(),
+                    noteBody.values[12] is String
+                        ? noteBody.values[12]
+                        : noteBody.values[12].toString(),
+                    style: TextStyle(fontSize: fontSizes)),
+              ],
+              [
+                Text("Class term", style: TextStyle(fontSize: fontSizes)),
+                Text(
+                    noteBody.values[13] is String
+                        ? noteBody.values[13]
+                        : noteBody.values[13].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Langage", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.lan is String
-                        ? AbsenceBody.lan
-                        : AbsenceBody.lan.toString(),
+                    noteBody.values[14] is String
+                        ? noteBody.values[14]
+                        : noteBody.values[14].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Level", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.lvl is String
-                        ? AbsenceBody.lvl
-                        : AbsenceBody.lvl.toString(),
+                    noteBody.values[15] is String
+                        ? noteBody.values[15]
+                        : noteBody.values[15].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
-                Text("Attendance", style: TextStyle(fontSize: fontSizes)),
+                Text("Category", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    AbsenceBody.attendances is String
-                        ? AbsenceBody.attendances
-                        : AbsenceBody.attendances.toString(),
+                    noteBody.values[15] is String
+                        ? noteBody.values[15]
+                        : noteBody.values[15].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
             ]);

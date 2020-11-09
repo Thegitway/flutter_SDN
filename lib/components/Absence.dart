@@ -35,10 +35,11 @@ class Absence {
         lvl: json['lvl'],
         attendances: json['attendances']);
   }
-}
 
-Absence JsonClass(String jsonStr) {
-  final decode = json.jsonDecode(jsonStr);
-  Absence listJson = Absence.fromJson(decode);
-  return listJson;
+  @override
+  Absence JsonClass(String jsonStr) {
+    final decode = json.jsonDecode(jsonStr);
+    Absence listJson = Absence.fromJson(decode);
+    return listJson;
+  }
 }
