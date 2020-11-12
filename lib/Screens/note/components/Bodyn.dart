@@ -1,3 +1,4 @@
+import 'package:le_savoir_du_nord/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/components/Array.dart';
@@ -5,7 +6,7 @@ import 'package:le_savoir_du_nord/components/Note.dart';
 import 'package:le_savoir_du_nord/components/Json/JsonM.dart';
 
 class Bodyn extends StatefulWidget {
-  const Bodyn({
+  Bodyn({
     Key key,
   }) : super(key: key);
 
@@ -14,17 +15,13 @@ class Bodyn extends StatefulWidget {
 }
 
 class _BodynState extends State<Bodyn> {
-  double fontSizes;
   Note noteBody;
-  @override
+
   void initState() {
     super.initState();
-    /* ClassApi().then((value) {
-      setState(() {
-        AbsenceBody = value;
-      });
-    });*/
   }
+
+  double fontSizes;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +29,7 @@ class _BodynState extends State<Bodyn> {
     Size size = MediaQuery.of(context).size;
 
     return FutureBuilder(
-        future: getApiNote(urlNote, noteBody),
+        future: getApiNote(urlNote + '${studentID}/${registerID}'),
         builder: (context, snapshot) {
           noteBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:le_savoir_du_nord/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:le_savoir_du_nord/components/Absence.dart';
 import 'package:le_savoir_du_nord/components/Array.dart';
@@ -27,7 +28,7 @@ class _BodyaState extends State<Bodya> {
     Size size = MediaQuery.of(context).size;
 
     return FutureBuilder(
-        future: getApiAbsence(urlAbsence, absenceBody),
+        future: getApiAbsence(urlAbsence + '${studentID}/${registerID}'),
         builder: (context, snapshot) {
           absenceBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {

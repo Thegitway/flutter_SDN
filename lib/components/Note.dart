@@ -25,11 +25,17 @@ class Note {
 
   factory Note.fromJson(Map<String, dynamic> json) {
     if (json == null) {
-      List<String> helper = List<String>();
+      List<String> helper = List.filled(17, "none");
       return Note(values: helper);
     }
+
     List<String> helper = List<String>();
     for (int i = 0; i < 17; i++) helper.add(json[index[i]].toString());
+    return Note(values: helper);
+  }
+
+  factory Note.empty() {
+    List<String> helper = List.filled(17, "none");
     return Note(values: helper);
   }
 

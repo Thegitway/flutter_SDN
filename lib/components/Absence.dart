@@ -23,7 +23,7 @@ class Absence {
       this.attendances});
 
   factory Absence.fromJson(Map<String, dynamic> json) {
-    if (json == null) return null;
+    if (json == null) return Absence.empty();
     return Absence(
         class_id: json['class_id'],
         stu_id: json['stu_id'],
@@ -34,6 +34,18 @@ class Absence {
         lan: json['lan'],
         lvl: json['lvl'],
         attendances: json['attendances']);
+  }
+  factory Absence.empty() {
+    return Absence(
+        class_id: "none",
+        stu_id: "none",
+        cl_name: "none",
+        url: "none",
+        Stu_last_name: "none",
+        c_term: "none",
+        lan: "none",
+        lvl: "none",
+        attendances: "0");
   }
 
   @override

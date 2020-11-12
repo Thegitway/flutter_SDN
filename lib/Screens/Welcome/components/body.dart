@@ -17,6 +17,9 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   double _size = 0.25;
   Orientation ori;
   Orientation oldOri;
+  void initState() {
+    super.initState();
+  }
 
   void _updateSize() {
     setState(() {
@@ -29,6 +32,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     ori = MediaQuery.of(context).orientation;
+
     if (oldOri != ori) _updateSize();
     // This size provide us total height and width of our screen
     return Background(
@@ -56,7 +60,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               hintText: "Student ID",
               onChanged: (value) {
                 setState(() {
-                  studentID = value;
+                  studentID != "" ? studentID = value : studentID = "null";
                 });
               },
             ),
@@ -64,10 +68,13 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               hintText: "Register ID",
               onChanged: (co) {
                 setState(() {
-                  registerID = co;
+                  if (co != "")
+                    registerID = co;
+                  else
+                    registerID = "null";
                 });
               },
-              icon: Icons.assistant_photo,
+              icon: Icons.vpn_key_outlined,
             ),
             RoundedButton(
               text: "LOGIN",

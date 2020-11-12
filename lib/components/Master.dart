@@ -7,16 +7,27 @@ import 'package:le_savoir_du_nord/Screens/class/class_screen.dart';
 import 'package:le_savoir_du_nord/Screens/class/components/Bodyc.dart';
 import 'package:le_savoir_du_nord/constants.dart';
 
-class Master extends StatelessWidget {
+class Master extends StatefulWidget {
   Master({Key key, this.body}) : super(key: key);
-  Size size;
-  var heightBar = AppBar().preferredSize.height;
   Widget body;
+
+  @override
+  _MasterState createState() => _MasterState();
+}
+
+class _MasterState extends State<Master> {
+  Size size;
+  void initState() {
+    super.initState();
+  }
+
+  var heightBar = AppBar().preferredSize.height;
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
-      body: body,
+      body: widget.body,
       appBar: AppBar(
         centerTitle: true,
         title: Image.asset(
@@ -26,14 +37,61 @@ class Master extends StatelessWidget {
         ),
         toolbarHeight: heightBar * 1.2,
         actions: [
-          IconButton(
-              icon: Icon(
-                Icons.person,
-                color: kPrimaryLightColor,
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Icon(
+                            Icons.person,
+                            color: kPrimaryLightColor,
+                            size: 17,
+                          ),
+                        ),
+                        SelectableText(" : " + studentID,
+                            style: TextStyle(fontSize: 15)),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Icon(
+                            Icons.vpn_key_outlined,
+                            color: kPrimaryLightColor,
+                            size: 17,
+                          ),
+                        ),
+                        SelectableText(" : " + registerID,
+                            style: TextStyle(fontSize: 15)),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              onPressed: () {}),
-          // Text(studentID),
+            ),
+          ),
         ],
+        leading: IconButton(
+          icon: Icon(Icons.menu_open),
+          onPressed: () {
+            studentID = "null";
+            registerID = "null";
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return WelcomeScreen();
+                },
+              ),
+            );
+          },
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.amber,
@@ -57,7 +115,7 @@ class Master extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.school),
               onPressed: () {
-                if (!(this.body is Bodyc)) {
+                if (!(this.widget.body is Bodyc)) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -72,7 +130,7 @@ class Master extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.note),
               onPressed: () {
-                if (!(this.body is Bodyn)) {
+                if (!(this.widget.body is Bodyn)) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
