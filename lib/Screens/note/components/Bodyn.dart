@@ -25,11 +25,11 @@ class _BodynState extends State<Bodyn> {
 
   @override
   Widget build(BuildContext context) {
-    fontSizes = MediaQuery.of(context).devicePixelRatio * 8;
     Size size = MediaQuery.of(context).size;
+    fontSizes = size.width / 22;
 
     return FutureBuilder(
-        future: getApiNote(urlNote + '${studentID}/${registerID}'),
+        future: getApiNote(urlNote + "4019167" + "/" + "1711820"),
         builder: (context, snapshot) {
           noteBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {
@@ -38,82 +38,82 @@ class _BodynState extends State<Bodyn> {
                 Text("Student last name",
                     style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[10] is String
-                        ? noteBody.values[10]
-                        : noteBody.values[10].toString(),
+                    noteBody.values[0][10] is String
+                        ? noteBody.values[0][10]
+                        : noteBody.values[0][10].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Student first name",
                     style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[0] is String
-                        ? noteBody.values[0]
-                        : noteBody.values[0].toString(),
+                    noteBody.values[0][0] is String
+                        ? noteBody.values[0][0]
+                        : noteBody.values[0][0].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Test 1", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[1] is String
-                        ? noteBody.values[1]
-                        : noteBody.values[1].toString(),
+                    noteBody.values[0][1] is String
+                        ? noteBody.values[0][1]
+                        : noteBody.values[0][1].toString(),
                     style: TextStyle(fontSize: fontSizes))
               ],
               [
                 Text("Test 2", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[2] is String
-                        ? noteBody.values[2]
-                        : noteBody.values[2].toString(),
+                    noteBody.values[0][2] is String
+                        ? noteBody.values[0][2]
+                        : noteBody.values[0][2].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Participation", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[3] is String
-                        ? noteBody.values[3]
-                        : noteBody.values[3].toString(),
+                    noteBody.values[0][3] is String
+                        ? noteBody.values[0][3]
+                        : noteBody.values[0][3].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Final exam", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[4] is String
-                        ? noteBody.values[4]
-                        : noteBody.values[4].toString(),
+                    noteBody.values[0][4] is String
+                        ? noteBody.values[0][4]
+                        : noteBody.values[0][4].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Total", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[5] is String
-                        ? noteBody.values[5]
-                        : noteBody.values[5].toString(),
+                    noteBody.values[0][5] is String
+                        ? noteBody.values[0][5]
+                        : noteBody.values[0][5].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("decision", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[6] is String
-                        ? noteBody.values[6]
-                        : noteBody.values[6].toString(),
+                    noteBody.values[0][6] is String
+                        ? noteBody.values[0][6]
+                        : noteBody.values[0][6].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Teacher remarks", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[7] is String
-                        ? noteBody.values[7]
-                        : noteBody.values[7].toString(),
+                    noteBody.values[0][7] is String
+                        ? noteBody.values[0][7]
+                        : noteBody.values[0][7].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Class name", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[8] is String
-                        ? noteBody.values[8]
-                        : noteBody.values[8].toString(),
+                    noteBody.values[0][8] is String
+                        ? noteBody.values[0][8]
+                        : noteBody.values[0][8].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
@@ -124,9 +124,9 @@ class _BodynState extends State<Bodyn> {
                     size: fontSizes * 2.5,
                   ),
                   onTap: () async {
-                    if (noteBody.values[9] != null) {
-                      if (await canLaunch(noteBody.values[9]))
-                        launch(noteBody.values[9]);
+                    if (noteBody.values[0][9] != null) {
+                      if (await canLaunch(noteBody.values[0][9]))
+                        launch(noteBody.values[0][9]);
                     }
                   },
                 ),
@@ -135,50 +135,50 @@ class _BodynState extends State<Bodyn> {
                 Text("Teacher last name",
                     style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[11] is String
-                        ? noteBody.values[11]
-                        : noteBody.values[11].toString(),
+                    noteBody.values[0][11] is String
+                        ? noteBody.values[0][11]
+                        : noteBody.values[0][11].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Teacher first name",
                     style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[12] is String
-                        ? noteBody.values[12]
-                        : noteBody.values[12].toString(),
+                    noteBody.values[0][12] is String
+                        ? noteBody.values[0][12]
+                        : noteBody.values[0][12].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Class term", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[13] is String
-                        ? noteBody.values[13]
-                        : noteBody.values[13].toString(),
+                    noteBody.values[0][13] is String
+                        ? noteBody.values[0][13]
+                        : noteBody.values[0][13].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Langage", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[14] is String
-                        ? noteBody.values[14]
-                        : noteBody.values[14].toString(),
+                    noteBody.values[0][14] is String
+                        ? noteBody.values[0][14]
+                        : noteBody.values[0][14].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Level", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[15] is String
-                        ? noteBody.values[15]
-                        : noteBody.values[15].toString(),
+                    noteBody.values[0][15] is String
+                        ? noteBody.values[0][15]
+                        : noteBody.values[0][15].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
                 Text("Category", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    noteBody.values[15] is String
-                        ? noteBody.values[15]
-                        : noteBody.values[15].toString(),
+                    noteBody.values[0][15] is String
+                        ? noteBody.values[0][15]
+                        : noteBody.values[0][15].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
             ]);

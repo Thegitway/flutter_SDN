@@ -36,8 +36,8 @@ class _BodyaState extends State<Bodya> {
               [
                 Text("Class ID", style: TextStyle(fontSize: fontSizes)),
                 Text(
-                    absenceBody.class_id is String
-                        ? absenceBody.class_id
+                    absenceBody.class_id == null
+                        ? "absenceBody.class_id"
                         : absenceBody.class_id.toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],

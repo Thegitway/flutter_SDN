@@ -1,7 +1,7 @@
 import 'dart:convert' as json;
 
 class Note {
-  List<String> values;
+  List<List<String>> values;
   static const index = <String>[
     "Stu_first_name",
     "test_1",
@@ -24,18 +24,17 @@ class Note {
   Note({this.values});
 
   factory Note.fromJson(Map<String, dynamic> json) {
-    if (json == null) {
-      List<String> helper = List.filled(17, "none");
-      return Note(values: helper);
-    }
+    if (json == null) return Note.empty();
 
-    List<String> helper = List<String>();
-    for (int i = 0; i < 17; i++) helper.add(json[index[i]].toString());
+    List<List<String>> helper = List<List<String>>(json.length);
+    for (int j = 0; j < json.length; j++)
+      for (int i = 0; i < 17; i++) helper[0].add(json[index[i]].toString());
     return Note(values: helper);
   }
 
   factory Note.empty() {
-    List<String> helper = List.filled(17, "none");
+    List<List<String>> helper = List<List<String>>(1);
+    helper[0] = List.filled(17, "none");
     return Note(values: helper);
   }
 
