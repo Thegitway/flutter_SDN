@@ -5,6 +5,7 @@ import 'package:le_savoir_du_nord/Screens/Welcome/components/body.dart';
 import 'package:le_savoir_du_nord/components/Absence.dart';
 import 'package:le_savoir_du_nord/components/Array.dart';
 import 'package:le_savoir_du_nord/components/Json/JsonM.dart';
+import 'package:le_savoir_du_nord/components/RowButton.dart';
 
 class Bodya extends StatefulWidget {
   const Bodya({
@@ -34,27 +35,42 @@ class _BodyaState extends State<Bodya> {
           if (snapshot.connectionState == ConnectionState.done) {
             if (Absence.maxPage != -1) {
               Body.titre = "";
-              return Array(width: size.width, col: [
-                [
-                  Text("Langage", style: TextStyle(fontSize: fontSizes)),
-                  Text(
-                      absenceBody.values[Absence.actuelPage][6] is String
-                          ? absenceBody.values[Absence.actuelPage][6]
-                          : absenceBody.values[Absence.actuelPage][6]
-                              .toString(),
-                      style: TextStyle(fontSize: fontSizes)),
-                ],
-                [
-                  Text("""Heure d'abcense""",
-                      style: TextStyle(fontSize: fontSizes)),
-                  Text(
-                      absenceBody.values[Absence.actuelPage][8] is String
-                          ? absenceBody.values[Absence.actuelPage][8]
-                          : absenceBody.values[Absence.actuelPage][8]
-                              .toString(),
-                      style: TextStyle(fontSize: fontSizes)),
-                ],
-              ]);
+              RowButton.iam = 2;
+              List<String> namess = <String>[];
+              for (int i = 0; i < Absence.maxPage; i++)
+                namess
+                    .add((i + 1).toString() + ") " + absenceBody.values[i][6]);
+              return Scaffold(
+                appBar: AppBar(
+                    leading: new Container(),
+                    leadingWidth: 0,
+                    centerTitle: true,
+                    title: RowButton(
+                      names: namess,
+                      numOfButton: namess.length,
+                    )),
+                body: Array(width: size.width, col: [
+                  [
+                    Text("Langage", style: TextStyle(fontSize: fontSizes)),
+                    Text(
+                        absenceBody.values[Absence.actuelPage][6] is String
+                            ? absenceBody.values[Absence.actuelPage][6]
+                            : absenceBody.values[Absence.actuelPage][6]
+                                .toString(),
+                        style: TextStyle(fontSize: fontSizes)),
+                  ],
+                  [
+                    Text("""Heure d'abcense""",
+                        style: TextStyle(fontSize: fontSizes)),
+                    Text(
+                        absenceBody.values[Absence.actuelPage][8] is String
+                            ? absenceBody.values[Absence.actuelPage][8]
+                            : absenceBody.values[Absence.actuelPage][8]
+                                .toString(),
+                        style: TextStyle(fontSize: fontSizes)),
+                  ],
+                ]),
+              );
             } else {
               Body.titre = "Information incorrecte";
               return Scaffold(

@@ -32,9 +32,11 @@ class Note {
 
     List<List<dynamic>> helper = List<List<dynamic>>();
     maxPage = json.length;
-    for (int j = 0; j < json.length; j++) {
+    for (int j = 0; j < maxPage; j++) {
       List<dynamic> miniHelper = List<dynamic>();
-      for (int i = 0; i < 17; i++) miniHelper.add(json[j][index[i]].toString());
+      for (int i = 0; i < 17; i++) {
+        miniHelper.add(json[j][index[i]].toString());
+      }
       helper.add(miniHelper);
     }
     return Note(values: helper);
