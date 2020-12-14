@@ -29,9 +29,10 @@ class _MasterState extends State<Master> {
     return Scaffold(
       body: widget.body,
       appBar: AppBar(
+        backgroundColor: kPrimaryLightColor,
         centerTitle: true,
         title: Image.asset(
-          "assets/images/logo.png",
+          "assets/images/logoE.png",
           width: heightBar,
           height: heightBar,
         ),
@@ -49,12 +50,13 @@ class _MasterState extends State<Master> {
                           padding: const EdgeInsets.all(2.0),
                           child: Icon(
                             Icons.person,
-                            color: kPrimaryLightColor,
+                            color: kPrimaryColor,
                             size: 17,
                           ),
                         ),
                         SelectableText(" : " + studentID,
-                            style: TextStyle(fontSize: 15)),
+                            style:
+                                TextStyle(fontSize: 15, color: kPrimaryColor)),
                       ],
                     ),
                     Row(
@@ -63,12 +65,14 @@ class _MasterState extends State<Master> {
                           padding: const EdgeInsets.all(2.0),
                           child: Icon(
                             Icons.vpn_key_outlined,
-                            color: kPrimaryLightColor,
+                            color: kPrimaryColor,
                             size: 17,
                           ),
                         ),
-                        SelectableText(" : " + registerID,
-                            style: TextStyle(fontSize: 15)),
+                        SelectableText(
+                          " : " + registerID,
+                          style: TextStyle(fontSize: 15, color: kPrimaryColor),
+                        ),
                       ],
                     ),
                   ],
@@ -78,7 +82,10 @@ class _MasterState extends State<Master> {
           ),
         ],
         leading: IconButton(
-          icon: Icon(Icons.menu_open),
+          icon: Icon(
+            Icons.menu_open,
+            color: kPrimaryColor,
+          ),
           onPressed: () {
             studentID = "null";
             registerID = "null";
@@ -94,13 +101,13 @@ class _MasterState extends State<Master> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.amber,
+        color: Colors.green[400],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.max,
           children: [
             IconButton(
-              icon: Icon(Icons.hourglass_full),
+              icon: Icon(Icons.hourglass_full, color: Colors.black),
               onPressed: () {
                 Navigator.push(
                   context,

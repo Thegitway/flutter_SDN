@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:le_savoir_du_nord/constants.dart';
 
 class Array extends StatelessWidget {
   double width;
@@ -32,7 +33,7 @@ class Array extends StatelessWidget {
           width: (width / col[index].length) - 4 * col[index].length,
           padding: EdgeInsets.all(17),
           decoration: BoxDecoration(
-            color: i == 0 ? Colors.grey[400] : Colors.amber,
+            color: i == 0 ? Colors.grey[400] : Colors.green[400],
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
           ),
           child: Center(

@@ -14,7 +14,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
-  double _size = 0.25;
+  double _size = 0.40;
   Orientation ori;
   Orientation oldOri;
   void initState() {
@@ -41,18 +41,18 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "WELCOM TO SAVOIR DU NORD",
+              "WELCOM TO EMSI",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: size.height * 0.02),
             AnimatedContainer(
               curve: Curves.decelerate,
               duration: Duration(seconds: 1),
-              width: size.width * _size,
-              height: size.width * _size,
-              child: CircleAvatar(
-                backgroundImage: AssetImage("assets/images/logo.png"),
-                backgroundColor: Colors.white,
+              width: size.width * 0.7,
+              height: size.width * 0.4,
+              child: Image.asset(
+                "assets/images/logoEE.png",
+
+                //backgroundColor: Colors.white,
               ),
             ),
             SizedBox(height: size.height * 0.07),
