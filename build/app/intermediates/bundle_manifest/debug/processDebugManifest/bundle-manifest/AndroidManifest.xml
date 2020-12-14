@@ -18,7 +18,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="le_savoir_du_nord"
+        android:label="Emsi"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="SDN.le_savoir_du_nord.MainActivity"

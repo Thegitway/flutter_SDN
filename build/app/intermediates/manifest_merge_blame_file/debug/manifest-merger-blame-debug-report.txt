@@ -24,8 +24,8 @@
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
 20-->C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:13:9-43
-21        android:label="le_savoir_du_nord"
-21-->C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:12:9-42
+21        android:label="Emsi"
+21-->C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:12:9-29
 22        android:usesCleartextTraffic="true" >
 22-->C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:11:9-44
 23        <activity

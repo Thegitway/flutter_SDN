@@ -53,7 +53,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\om
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\omaro\.gradle\caches\transforms-2\files-2.1\a528b13ac93e64cafa3d0480e2c93207\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:12:9-42
+		ADDED from C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:12:9-29
 	android:icon
 		ADDED from C:\Users\omaro\Desktop\flutter\flutter_SDN-master\android\app\src\main\AndroidManifest.xml:13:9-43
 	android:usesCleartextTraffic
