@@ -37,8 +37,7 @@ class _BodynState extends State<Bodyn> {
             if (Note.maxPage != -1) {
               return Array(width: size.width, col: [
                 [
-                  Text("Student last name",
-                      style: TextStyle(fontSize: fontSizes)),
+                  Text("Nom", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][10] is String
                           ? noteBody.values[Note.actuelPage][10]
@@ -46,8 +45,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Student first name",
-                      style: TextStyle(fontSize: fontSizes)),
+                  Text("Prenom", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][0] is String
                           ? noteBody.values[Note.actuelPage][0]
@@ -79,7 +77,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Final exam", style: TextStyle(fontSize: fontSizes)),
+                  Text("Exam finale", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][4] is String
                           ? noteBody.values[Note.actuelPage][4]
@@ -95,7 +93,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("decision", style: TextStyle(fontSize: fontSizes)),
+                  Text("Decision", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][6] is String
                           ? noteBody.values[Note.actuelPage][6]
@@ -103,7 +101,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Teacher remarks",
+                  Text("Remarque du professeur",
                       style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][7] is String
@@ -112,7 +110,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Class name", style: TextStyle(fontSize: fontSizes)),
+                  Text("Nom de classe", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][8] is String
                           ? noteBody.values[Note.actuelPage][8]
@@ -120,7 +118,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Class link", style: TextStyle(fontSize: fontSizes)),
+                  Text("Lien de classe", style: TextStyle(fontSize: fontSizes)),
                   ListTile(
                     title: Icon(
                       Icons.link,
@@ -136,29 +134,11 @@ class _BodynState extends State<Bodyn> {
                   ),
                 ],
                 [
-                  Text("Teacher last name",
-                      style: TextStyle(fontSize: fontSizes)),
+                  Text("Professeur", style: TextStyle(fontSize: fontSizes)),
                   Text(
-                      noteBody.values[Note.actuelPage][11] is String
-                          ? noteBody.values[Note.actuelPage][11]
-                          : noteBody.values[Note.actuelPage][11].toString(),
-                      style: TextStyle(fontSize: fontSizes)),
-                ],
-                [
-                  Text("Teacher first name",
-                      style: TextStyle(fontSize: fontSizes)),
-                  Text(
-                      noteBody.values[Note.actuelPage][12] is String
-                          ? noteBody.values[Note.actuelPage][12]
-                          : noteBody.values[Note.actuelPage][12].toString(),
-                      style: TextStyle(fontSize: fontSizes)),
-                ],
-                [
-                  Text("Class term", style: TextStyle(fontSize: fontSizes)),
-                  Text(
-                      noteBody.values[Note.actuelPage][13] is String
-                          ? noteBody.values[Note.actuelPage][13]
-                          : noteBody.values[Note.actuelPage][13].toString(),
+                      noteBody.values[Note.actuelPage][11].toString() +
+                          " " +
+                          noteBody.values[Note.actuelPage][12].toString(),
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
@@ -170,7 +150,7 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Level", style: TextStyle(fontSize: fontSizes)),
+                  Text("Niveau", style: TextStyle(fontSize: fontSizes)),
                   Text(
                       noteBody.values[Note.actuelPage][15] is String
                           ? noteBody.values[Note.actuelPage][15]
@@ -178,11 +158,11 @@ class _BodynState extends State<Bodyn> {
                       style: TextStyle(fontSize: fontSizes)),
                 ],
                 [
-                  Text("Category", style: TextStyle(fontSize: fontSizes)),
+                  Text("Categorie", style: TextStyle(fontSize: fontSizes)),
                   Text(
-                      noteBody.values[Note.actuelPage][15] is String
-                          ? noteBody.values[Note.actuelPage][15]
-                          : noteBody.values[Note.actuelPage][15].toString(),
+                      noteBody.values[Note.actuelPage][16] is String
+                          ? noteBody.values[Note.actuelPage][16]
+                          : noteBody.values[Note.actuelPage][16].toString(),
                       style: TextStyle(fontSize: fontSizes)),
                 ],
               ]);

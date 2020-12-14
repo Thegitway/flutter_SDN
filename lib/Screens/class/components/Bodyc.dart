@@ -39,23 +39,7 @@ class _BodycState extends State<Bodyc> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Array(width: size.width, col: [
               [
-                Text("Class ID", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    classBody.values[Class.actuelPage][0] is String
-                        ? classBody.values[Class.actuelPage][0]
-                        : classBody.values[Class.actuelPage][0].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Student ID", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    classBody.values[Class.actuelPage][1] is String
-                        ? classBody.values[Class.actuelPage][1]
-                        : classBody.values[Class.actuelPage][1].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Class name", style: TextStyle(fontSize: fontSizes)),
+                Text("Nom de classe", style: TextStyle(fontSize: fontSizes)),
                 Text(
                     classBody.values[Class.actuelPage][2] is String
                         ? classBody.values[Class.actuelPage][2]
@@ -63,7 +47,7 @@ class _BodycState extends State<Bodyc> {
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
-                Text("Class link", style: TextStyle(fontSize: fontSizes)),
+                Text("Lien de classe", style: TextStyle(fontSize: fontSizes)),
                 ListTile(
                   title: Icon(
                     Icons.link,
@@ -79,16 +63,7 @@ class _BodycState extends State<Bodyc> {
                 ),
               ],
               [
-                Text("Student last name",
-                    style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    classBody.values[Class.actuelPage][4] is String
-                        ? classBody.values[Class.actuelPage][4]
-                        : classBody.values[Class.actuelPage][4].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Class term", style: TextStyle(fontSize: fontSizes)),
+                Text("Terme de classe", style: TextStyle(fontSize: fontSizes)),
                 Text(
                     classBody.values[Class.actuelPage][5] is String
                         ? classBody.values[Class.actuelPage][5]
@@ -104,7 +79,7 @@ class _BodycState extends State<Bodyc> {
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
-                Text("Level", style: TextStyle(fontSize: fontSizes)),
+                Text("Niveau", style: TextStyle(fontSize: fontSizes)),
                 Text(
                     classBody.values[Class.actuelPage][7] is String
                         ? classBody.values[Class.actuelPage][7]

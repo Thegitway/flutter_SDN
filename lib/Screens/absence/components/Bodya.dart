@@ -34,76 +34,11 @@ class _BodyaState extends State<Bodya> {
           if (snapshot.connectionState == ConnectionState.done) {
             return Array(width: size.width, col: [
               [
-                Text("Class ID", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][0] == null
-                        ? "none"
-                        : absenceBody.values[Absence.actuelPage][0].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Student ID", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][1] is String
-                        ? absenceBody.values[Absence.actuelPage][1]
-                        : absenceBody.values[Absence.actuelPage][1].toString(),
-                    style: TextStyle(fontSize: fontSizes))
-              ],
-              [
-                Text("Class name", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][2] is String
-                        ? absenceBody.values[Absence.actuelPage][2]
-                        : absenceBody.values[Absence.actuelPage][2].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Class link", style: TextStyle(fontSize: fontSizes)),
-                ListTile(
-                  title: Icon(
-                    Icons.link,
-                    size: fontSizes * 2.5,
-                  ),
-                  onTap: () async {
-                    if (absenceBody.values[Absence.actuelPage][3] != null) {
-                      if (await canLaunch(
-                          absenceBody.values[Absence.actuelPage][3]))
-                        launch(absenceBody.values[Absence.actuelPage][3]);
-                    }
-                  },
-                ),
-              ],
-              [
-                Text("Student last name",
-                    style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][4] is String
-                        ? absenceBody.values[Absence.actuelPage][4]
-                        : absenceBody.values[Absence.actuelPage][4].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("term", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][5] is String
-                        ? absenceBody.values[Absence.actuelPage][5]
-                        : absenceBody.values[Absence.actuelPage][5].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
                 Text("Langage", style: TextStyle(fontSize: fontSizes)),
                 Text(
                     absenceBody.values[Absence.actuelPage][6] is String
                         ? absenceBody.values[Absence.actuelPage][6]
                         : absenceBody.values[Absence.actuelPage][6].toString(),
-                    style: TextStyle(fontSize: fontSizes)),
-              ],
-              [
-                Text("Level", style: TextStyle(fontSize: fontSizes)),
-                Text(
-                    absenceBody.values[Absence.actuelPage][7] is String
-                        ? absenceBody.values[Absence.actuelPage][7]
-                        : absenceBody.values[Absence.actuelPage][7].toString(),
                     style: TextStyle(fontSize: fontSizes)),
               ],
               [
