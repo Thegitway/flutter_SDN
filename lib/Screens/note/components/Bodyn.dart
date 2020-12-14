@@ -35,6 +35,7 @@ class _BodynState extends State<Bodyn> {
           noteBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {
             if (Note.maxPage != -1) {
+              Body.titre = "";
               return Array(width: size.width, col: [
                 [
                   Text("Nom", style: TextStyle(fontSize: fontSizes)),
@@ -167,6 +168,7 @@ class _BodynState extends State<Bodyn> {
                 ],
               ]);
             } else {
+              Body.titre = "Information incorrecte";
               return Scaffold(
                 body: Body(),
               );

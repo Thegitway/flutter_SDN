@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763ff4ec-bbb8-42db-a3bd-d6072ae0441e" name="Default Changelist" comment="Emsi designe 1.1">
+    <list default="true" id="763ff4ec-bbb8-42db-a3bd-d6072ae0441e" name="Default Changelist" comment="trad note Francais">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Screens/Welcome/components/body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/Welcome/components/body.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/absence/components/Bodya.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/absence/components/Bodya.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/class/components/Bodyc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/class/components/Bodyc.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Screens/note/components/Bodyn.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Screens/note/components/Bodyn.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607960557995</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="trad note Francais">
+      <created>1607961622673</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607961622673</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,29 +123,30 @@
     <MESSAGE value="probleme regler" />
     <MESSAGE value="Emsi designe" />
     <MESSAGE value="Emsi designe 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Emsi designe 1.1" />
+    <MESSAGE value="trad note Francais" />
+    <option name="LAST_COMMIT_MESSAGE" value="trad note Francais" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="100" width="1080" height="480" key="AVDManager" timestamp="1607960034143">
+    <state x="100" y="100" width="1080" height="480" key="AVDManager" timestamp="1607970473047">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="100" y="100" width="1080" height="480" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1607960034143" />
-    <state width="1236" height="316" key="GridCell.Tab.0.bottom" timestamp="1607960473093">
+    <state x="100" y="100" width="1080" height="480" key="AVDManager/0.0.1280.680@0.0.1280.680" timestamp="1607970473047" />
+    <state width="1236" height="316" key="GridCell.Tab.0.bottom" timestamp="1607970830131">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="316" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607960473093" />
-    <state width="1236" height="316" key="GridCell.Tab.0.center" timestamp="1607960473093">
+    <state width="1236" height="316" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607970830131" />
+    <state width="1236" height="316" key="GridCell.Tab.0.center" timestamp="1607970830131">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="316" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607960473093" />
-    <state width="1236" height="316" key="GridCell.Tab.0.left" timestamp="1607960473093">
+    <state width="1236" height="316" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607970830131" />
+    <state width="1236" height="316" key="GridCell.Tab.0.left" timestamp="1607970830131">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="316" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607960473093" />
-    <state width="1236" height="316" key="GridCell.Tab.0.right" timestamp="1607960473093">
+    <state width="1236" height="316" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607970830131" />
+    <state width="1236" height="316" key="GridCell.Tab.0.right" timestamp="1607970830131">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1236" height="316" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607960473093" />
+    <state width="1236" height="316" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607970830131" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1607874220013">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

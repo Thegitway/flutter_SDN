@@ -7,6 +7,7 @@ import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
 import '../../../constants.dart';
 
 class Body extends StatefulWidget {
+  static String titre = "";
   Body({Key key}) : super(key: key);
 
   @override
@@ -42,7 +43,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
           children: <Widget>[
             Text(
               "WELCOM TO EMSI",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             AnimatedContainer(
               curve: Curves.decelerate,
@@ -56,6 +57,11 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               ),
             ),
             SizedBox(height: size.height * 0.07),
+            Text(
+              Body.titre,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 18, color: Colors.red),
+            ),
             RoundedInputField(
               hintText: "Student ID",
               onChanged: (value) {
