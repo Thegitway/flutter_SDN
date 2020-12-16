@@ -1,5 +1,5 @@
 name: le_savoir_du_nord
-description: Le Savoir du nord App
+description: Emsi
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  connectivity: ^2.0.2
   http: ^0.12.2
   url_launcher: any
   flutter:

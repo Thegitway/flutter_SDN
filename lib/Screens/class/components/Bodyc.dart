@@ -22,6 +22,8 @@ class _BodycState extends State<Bodyc> {
   @override
   void initState() {
     super.initState();
+    Body.bot = true;
+
     /* ClassApi().then((value) {
       setState(() {
         AbsenceBody = value;

@@ -1,3 +1,4 @@
+import 'package:le_savoir_du_nord/Screens/Welcome/welcome_screen.dart';
 import 'package:le_savoir_du_nord/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,8 @@ import 'package:le_savoir_du_nord/components/Note.dart';
 import 'package:le_savoir_du_nord/components/Json/JsonM.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/components/body.dart';
 import 'package:le_savoir_du_nord/components/RowButton.dart';
+import 'package:le_savoir_du_nord/components/Master.dart';
+import 'package:le_savoir_du_nord/Screens/Welcome/welcome_screen.dart';
 
 class Bodyn extends StatefulWidget {
   Bodyn({
@@ -21,6 +24,7 @@ class _BodynState extends State<Bodyn> {
 
   void initState() {
     super.initState();
+    Body.bot = true;
   }
 
   double fontSizes;
@@ -187,9 +191,9 @@ class _BodynState extends State<Bodyn> {
                   ]));
             } else {
               Body.titre = "Information incorrecte";
-              return Scaffold(
-                body: Body(),
-              );
+              Body.bot = false;
+
+              return Body();
             }
           } else
             return Center(child: CircularProgressIndicator());

@@ -21,6 +21,7 @@ class _BodyaState extends State<Bodya> {
   @override
   void initState() {
     super.initState();
+    Body.bot = true;
   }
 
   @override
