@@ -6,6 +6,7 @@ import 'package:le_savoir_du_nord/components/Class.dart';
 import 'package:le_savoir_du_nord/components/Json/JsonM.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/components/body.dart';
 import 'package:le_savoir_du_nord/components/RowButton.dart';
+import 'package:le_savoir_du_nord/components/Master.dart';
 
 class Bodyc extends StatefulWidget {
   const Bodyc({
@@ -46,68 +47,74 @@ class _BodycState extends State<Bodyc> {
               List<String> namess = <String>[];
               for (int i = 0; i < Class.maxPage; i++)
                 namess.add((i + 1).toString() + ") " + classBody.values[i][6]);
-              return Scaffold(
-                appBar: AppBar(
-                    leading: new Container(),
-                    leadingWidth: 0,
-                    centerTitle: true,
-                    title: RowButton(
-                      names: namess,
-                      numOfButton: namess.length,
-                    )),
-                body: Array(width: size.width, col: [
-                  [
-                    Text("Nom de classe",
-                        style: TextStyle(fontSize: fontSizes)),
-                    Text(
-                        classBody.values[Class.actuelPage][2] is String
-                            ? classBody.values[Class.actuelPage][2]
-                            : classBody.values[Class.actuelPage][2].toString(),
-                        style: TextStyle(fontSize: fontSizes)),
-                  ],
-                  [
-                    Text("Lien de classe",
-                        style: TextStyle(fontSize: fontSizes)),
-                    ListTile(
-                      title: Icon(
-                        Icons.link,
-                        size: fontSizes * 2.5,
+              return Master(
+                body: Scaffold(
+                  appBar: AppBar(
+                      leading: new Container(),
+                      leadingWidth: 0,
+                      centerTitle: true,
+                      title: RowButton(
+                        names: namess,
+                        numOfButton: namess.length,
+                      )),
+                  body: Array(width: size.width, col: [
+                    [
+                      Text("Nom de classe",
+                          style: TextStyle(fontSize: fontSizes)),
+                      Text(
+                          classBody.values[Class.actuelPage][2] is String
+                              ? classBody.values[Class.actuelPage][2]
+                              : classBody.values[Class.actuelPage][2]
+                                  .toString(),
+                          style: TextStyle(fontSize: fontSizes)),
+                    ],
+                    [
+                      Text("Lien de classe",
+                          style: TextStyle(fontSize: fontSizes)),
+                      ListTile(
+                        title: Icon(
+                          Icons.link,
+                          size: fontSizes * 2.5,
+                        ),
+                        onTap: () async {
+                          if (classBody.values[Class.actuelPage][3] != null) {
+                            if (await canLaunch(
+                                classBody.values[Class.actuelPage][3]))
+                              launch(classBody.values[Class.actuelPage][3]);
+                          }
+                        },
                       ),
-                      onTap: () async {
-                        if (classBody.values[Class.actuelPage][3] != null) {
-                          if (await canLaunch(
-                              classBody.values[Class.actuelPage][3]))
-                            launch(classBody.values[Class.actuelPage][3]);
-                        }
-                      },
-                    ),
-                  ],
-                  [
-                    Text("Terme de classe",
-                        style: TextStyle(fontSize: fontSizes)),
-                    Text(
-                        classBody.values[Class.actuelPage][5] is String
-                            ? classBody.values[Class.actuelPage][5]
-                            : classBody.values[Class.actuelPage][5].toString(),
-                        style: TextStyle(fontSize: fontSizes)),
-                  ],
-                  [
-                    Text("Langage", style: TextStyle(fontSize: fontSizes)),
-                    Text(
-                        classBody.values[Class.actuelPage][6] is String
-                            ? classBody.values[Class.actuelPage][6]
-                            : classBody.values[Class.actuelPage][6].toString(),
-                        style: TextStyle(fontSize: fontSizes)),
-                  ],
-                  [
-                    Text("Niveau", style: TextStyle(fontSize: fontSizes)),
-                    Text(
-                        classBody.values[Class.actuelPage][7] is String
-                            ? classBody.values[Class.actuelPage][7]
-                            : classBody.values[Class.actuelPage][7].toString(),
-                        style: TextStyle(fontSize: fontSizes)),
-                  ],
-                ]),
+                    ],
+                    [
+                      Text("Terme de classe",
+                          style: TextStyle(fontSize: fontSizes)),
+                      Text(
+                          classBody.values[Class.actuelPage][5] is String
+                              ? classBody.values[Class.actuelPage][5]
+                              : classBody.values[Class.actuelPage][5]
+                                  .toString(),
+                          style: TextStyle(fontSize: fontSizes)),
+                    ],
+                    [
+                      Text("Langage", style: TextStyle(fontSize: fontSizes)),
+                      Text(
+                          classBody.values[Class.actuelPage][6] is String
+                              ? classBody.values[Class.actuelPage][6]
+                              : classBody.values[Class.actuelPage][6]
+                                  .toString(),
+                          style: TextStyle(fontSize: fontSizes)),
+                    ],
+                    [
+                      Text("Niveau", style: TextStyle(fontSize: fontSizes)),
+                      Text(
+                          classBody.values[Class.actuelPage][7] is String
+                              ? classBody.values[Class.actuelPage][7]
+                              : classBody.values[Class.actuelPage][7]
+                                  .toString(),
+                          style: TextStyle(fontSize: fontSizes)),
+                    ],
+                  ]),
+                ),
               );
             } else {
               Body.titre = "Information incorrecte";

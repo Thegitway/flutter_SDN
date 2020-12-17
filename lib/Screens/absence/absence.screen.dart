@@ -6,7 +6,7 @@ class AbsenceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Master(body: Bodya()),
+      body: Bodya(),
     );
   }
 }

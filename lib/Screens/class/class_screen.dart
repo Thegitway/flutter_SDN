@@ -6,7 +6,7 @@ class ClassScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Master(body: Bodyc()),
+      body: Bodyc(),
     );
   }
 }

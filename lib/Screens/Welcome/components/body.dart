@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/components/background.dart';
+import 'package:le_savoir_du_nord/Screens/note/components/Bodyn.dart';
 import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
 import 'package:le_savoir_du_nord/components/rounded_button.dart';
 import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
@@ -66,7 +67,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
               hintText: "Student ID",
               onChanged: (value) {
                 setState(() {
-                  studentID != "" ? studentID = value : studentID = "null";
+                  studentID != "" ? studentID = value : studentID = "incorrect";
                 });
               },
             ),
@@ -77,7 +78,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                   if (co != "")
                     registerID = co;
                   else
-                    registerID = "null";
+                    registerID = "incorrect";
                 });
               },
               icon: Icons.vpn_key_outlined,

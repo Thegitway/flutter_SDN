@@ -12,7 +12,7 @@ class _NoteScreenState extends State<NoteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Master(body: Bodyn()),
+      body: Bodyn(),
     );
   }
 }

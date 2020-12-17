@@ -140,7 +140,25 @@ class _MasterState extends State<Master> {
                                 ),
                               ],
                             ),
-                            connectionW,
+                            connectionW == null
+                                ? Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(1.0),
+                                        child: Icon(
+                                          Icons.wifi,
+                                          color: kPrimaryColor,
+                                          size: 17,
+                                        ),
+                                      ),
+                                      SelectableText(
+                                        " : " + "connection",
+                                        style: TextStyle(
+                                            fontSize: 14, color: kPrimaryColor),
+                                      ),
+                                    ],
+                                  )
+                                : connectionW,
                           ],
                         ),
                       ),
