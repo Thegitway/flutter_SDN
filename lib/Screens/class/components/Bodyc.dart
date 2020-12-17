@@ -22,7 +22,6 @@ class _BodycState extends State<Bodyc> {
   @override
   void initState() {
     super.initState();
-    Body.bot = true;
 
     /* ClassApi().then((value) {
       setState(() {
@@ -112,9 +111,8 @@ class _BodycState extends State<Bodyc> {
               );
             } else {
               Body.titre = "Information incorrecte";
-              return Scaffold(
-                body: Body(),
-              );
+
+              return Body();
             }
           } else
             return Center(child: CircularProgressIndicator());

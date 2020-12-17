@@ -21,7 +21,6 @@ class _BodyaState extends State<Bodya> {
   @override
   void initState() {
     super.initState();
-    Body.bot = true;
   }
 
   @override
@@ -74,9 +73,8 @@ class _BodyaState extends State<Bodya> {
               );
             } else {
               Body.titre = "Information incorrecte";
-              return Scaffold(
-                body: Body(),
-              );
+
+              return Body();
             }
           } else
             return Center(child: CircularProgressIndicator());

@@ -44,7 +44,6 @@ class Note {
 
   factory Note.empty() {
     List<List<dynamic>> helper = List<List<dynamic>>(1);
-    maxPage = 1;
     helper[0] = List.filled(17, "none");
     Note.maxPage = -1;
     return Note(values: helper);

@@ -89,6 +89,7 @@ class _MasterState extends State<Master> {
         future: con(),
         builder: (context, snapshot) {
           connectionW = snapshot.data;
+
           return Scaffold(
               body: widget.body,
               appBar: AppBar(
@@ -165,7 +166,7 @@ class _MasterState extends State<Master> {
                   },
                 ),
               ),
-              bottomNavigationBar: Body.bot == true ? bottoms : bottomsNull);
+              bottomNavigationBar: bottoms);
         });
   }
 }
@@ -183,7 +184,7 @@ Future<Widget> con() async {
         ),
       ),
       Text(
-        " connecter",
+        ": Connection",
         style: TextStyle(color: kPrimaryColor, fontSize: 14),
       ),
     ]);

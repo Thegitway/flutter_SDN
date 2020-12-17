@@ -33,6 +33,7 @@ class Class {
   factory Class.empty() {
     List<List<dynamic>> helper = List<List<dynamic>>(1);
     helper[0] = List.filled(8, "none");
+    Class.maxPage = -1;
     return Class(values: helper);
   }
 

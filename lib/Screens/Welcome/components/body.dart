@@ -8,7 +8,6 @@ import '../../../constants.dart';
 
 class Body extends StatefulWidget {
   static String titre = "";
-  static bool bot = false;
   Body({Key key}) : super(key: key);
 
   @override
