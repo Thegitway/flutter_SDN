@@ -24,6 +24,7 @@ class _RowButtonState extends State<RowButton> {
     var widgets = <Widget>[];
     for (int i = 0; i < widget.numOfButton; i++) {
       widgets.add(FlatButton(
+          color: Colors.black12,
           onPressed: () {
             if (Note.actuelPage != i)
               Navigator.push(
@@ -46,6 +47,7 @@ class _RowButtonState extends State<RowButton> {
     var widgets = <Widget>[];
     for (int i = 0; i < widget.numOfButton; i++) {
       widgets.add(FlatButton(
+          color: Colors.black12,
           onPressed: () {
             if (Class.actuelPage != i)
               Navigator.push(
@@ -68,6 +70,7 @@ class _RowButtonState extends State<RowButton> {
     var widgets = <Widget>[];
     for (int i = 0; i < widget.numOfButton; i++) {
       widgets.add(FlatButton(
+          color: Colors.black12,
           onPressed: () {
             if (Absence.actuelPage != i)
               Navigator.push(
@@ -89,18 +92,23 @@ class _RowButtonState extends State<RowButton> {
   @override
   Widget build(BuildContext context) {
     if (RowButton.iam == 0)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return ListView(
+        // This next line does the trick.
+        scrollDirection: Axis.horizontal,
         children: setTheRowNote(),
       );
     else if (RowButton.iam == 1)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return ListView(
+        // This next line does the trick.
+        scrollDirection: Axis.horizontal,
         children: setTheRowClass(),
       );
+
     if (RowButton.iam == 2)
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return ListView(
+        // This next line does the trick.
+        scrollDirection: Axis.horizontal,
+
         children: setTheRowAbsence(),
       );
   }

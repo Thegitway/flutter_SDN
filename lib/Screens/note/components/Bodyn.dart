@@ -21,7 +21,7 @@ class Bodyn extends StatefulWidget {
 
 class _BodynState extends State<Bodyn> {
   Note noteBody;
-
+  var ww;
   void initState() {
     super.initState();
   }
@@ -32,6 +32,7 @@ class _BodynState extends State<Bodyn> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     fontSizes = MediaQuery.of(context).devicePixelRatio * 5;
+    ww = size.width / 6;
 
     return FutureBuilder(
         future: getApiNote(urlNote + '${studentID}/${registerID}'),
@@ -47,12 +48,21 @@ class _BodynState extends State<Bodyn> {
               return Master(
                   body: Scaffold(
                 appBar: AppBar(
-                  leading: new Container(),
-                  leadingWidth: 0,
-                  centerTitle: true,
-                  title: RowButton(
-                    names: namess,
-                    numOfButton: namess.length,
+                  leading: Container(
+                    child: Center(
+                        child: Text(
+                      "Note",
+                      style: TextStyle(color: kPrimaryLightColor),
+                    )),
+                    color: Colors.black38,
+                  ),
+                  leadingWidth: ww,
+                  flexibleSpace: Padding(
+                    padding: EdgeInsets.fromLTRB(ww, 0, 0, 0),
+                    child: RowButton(
+                      names: namess,
+                      numOfButton: namess.length,
+                    ),
                   ),
                 ),
                 body: Array(width: size.width, col: [

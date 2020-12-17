@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Welcome/components/background.dart';
-import 'package:le_savoir_du_nord/Screens/note/components/Bodyn.dart';
-import 'package:le_savoir_du_nord/Screens/note/note_screen.dart';
+import 'package:le_savoir_du_nord/Screens/class/class_screen.dart';
 import 'package:le_savoir_du_nord/components/rounded_button.dart';
 import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
 
@@ -90,7 +89,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return NoteScreen();
+                      return ClassScreen();
                     },
                   ),
                 );

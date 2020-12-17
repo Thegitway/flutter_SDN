@@ -19,7 +19,7 @@ class Absence {
   Absence({this.values});
 
   factory Absence.fromJson(List<dynamic> json) {
-    if (json[0]["lan"] == null) return Absence.empty();
+    if (json == null) return Absence.empty();
 
     List<List<dynamic>> helper = List<List<dynamic>>();
     maxPage = json.length;
@@ -32,8 +32,8 @@ class Absence {
   }
   factory Absence.empty() {
     List<List<dynamic>> helper = List<List<dynamic>>(1);
-    helper[0] = List.filled(9, "none");
-    Absence.maxPage = -1;
+    helper[0] = List.filled(9, "vide");
+    Absence.maxPage = 1;
     return Absence(values: helper);
   }
 

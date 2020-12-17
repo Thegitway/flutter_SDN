@@ -20,6 +20,7 @@ class Bodyc extends StatefulWidget {
 class _BodycState extends State<Bodyc> {
   double fontSizes;
   Class classBody;
+  var ww;
   @override
   void initState() {
     super.initState();
@@ -35,7 +36,7 @@ class _BodycState extends State<Bodyc> {
   Widget build(BuildContext context) {
     fontSizes = MediaQuery.of(context).devicePixelRatio * 5;
     Size size = MediaQuery.of(context).size;
-
+    ww = size.width / 6;
     return FutureBuilder(
         future: getApiClass(urlClass + '${studentID}/${registerID}'),
         builder: (context, snapshot) {
@@ -50,12 +51,21 @@ class _BodycState extends State<Bodyc> {
               return Master(
                 body: Scaffold(
                   appBar: AppBar(
-                      leading: new Container(),
-                      leadingWidth: 0,
-                      centerTitle: true,
-                      title: RowButton(
-                        names: namess,
-                        numOfButton: namess.length,
+                      leading: Container(
+                        child: Center(
+                            child: Text(
+                          "Class",
+                          style: TextStyle(color: kPrimaryLightColor),
+                        )),
+                        color: Colors.black38,
+                      ),
+                      leadingWidth: ww,
+                      flexibleSpace: Padding(
+                        padding: EdgeInsets.fromLTRB(ww, 0, 0, 0),
+                        child: RowButton(
+                          names: namess,
+                          numOfButton: namess.length,
+                        ),
                       )),
                   body: Array(width: size.width, col: [
                     [

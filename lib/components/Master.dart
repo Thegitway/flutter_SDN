@@ -59,7 +59,9 @@ class _MasterState extends State<Master> {
               },
             ),
             IconButton(
-              icon: Icon(Icons.note),
+              icon: Icon(
+                Icons.note,
+              ),
               onPressed: () {
                 if (!(this.widget.body is Bodyn)) {
                   Navigator.push(
@@ -167,7 +169,7 @@ class _MasterState extends State<Master> {
                 ],
                 leading: IconButton(
                   icon: Icon(
-                    Icons.menu_open,
+                    Icons.arrow_back_ios_outlined,
                     color: kPrimaryColor,
                   ),
                   onPressed: () {
