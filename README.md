@@ -1,3 +1,2 @@
-# le_savoir_du_nord
-
+#EMSI
 Emsi flutter app to let student check their information
