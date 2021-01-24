@@ -35,6 +35,7 @@ class _BodyaState extends State<Bodya> {
           absenceBody = snapshot.data;
           if (snapshot.connectionState == ConnectionState.done) {
             if (Absence.maxPage != -1) {
+              //tester
               Body.titre = "";
               RowButton.iam = 2;
               List<String> namess = <String>[];
