@@ -3,6 +3,7 @@ import 'package:le_savoir_du_nord/Screens/Welcome/components/background.dart';
 import 'package:le_savoir_du_nord/Screens/class/class_screen.dart';
 import 'package:le_savoir_du_nord/components/rounded_button.dart';
 import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../constants.dart';
 
@@ -56,7 +57,37 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
                 //backgroundColor: Colors.white,
               ),
             ),
-            SizedBox(height: size.height * 0.07),
+            SizedBox(height: size.height * 0.035),
+            MaterialButton(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Espace privé",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Icon(
+                    Icons.admin_panel_settings_outlined,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+              color: Colors.indigoAccent,
+              onPressed: () async {
+                if (await canLaunch(
+                    "http://lesavoirdunord.herokuapp.com/login"))
+                  launch(
+                    "http://lesavoirdunord.herokuapp.com/login",
+                    enableJavaScript: true,
+                    forceWebView: true,
+                  );
+              },
+            ),
+            SizedBox(height: size.height * 0.035),
             Text(
               Body.titre,
               style: TextStyle(

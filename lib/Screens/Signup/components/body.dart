@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:le_savoir_du_nord/Screens/Login/login_screen.dart';
 import 'package:le_savoir_du_nord/Screens/Signup/components/background.dart';
-import 'package:le_savoir_du_nord/Screens/Signup/components/or_divider.dart';
-import 'package:le_savoir_du_nord/Screens/Signup/components/social_icon.dart';
 import 'package:le_savoir_du_nord/components/already_have_an_account_acheck.dart';
 import 'package:le_savoir_du_nord/components/rounded_button.dart';
 import 'package:le_savoir_du_nord/components/rounded_input_field.dart';
@@ -52,24 +50,6 @@ class Body extends StatelessWidget {
                 );
               },
             ),
-            /*OrDivider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SocalIcon(
-                  iconSrc: "assets/icons/facebook.svg",
-                  press: () {},
-                ),
-                SocalIcon(
-                  iconSrc: "assets/icons/twitter.svg",
-                  press: () {},
-                ),
-                SocalIcon(
-                  iconSrc: "assets/icons/google-plus.svg",
-                  press: () {},
-                ),
-              ],
-            )*/
           ],
         ),
       ),
